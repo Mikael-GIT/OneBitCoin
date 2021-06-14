@@ -5,6 +5,25 @@ import HistoryGraphic from './src/components/HistoryGraphic'
 import QuotationList from './src/components/QuotationsList'
 import QuotationItems from './src/components/QuotationsList/QuotationsItems'
 
+function addZero(number){
+  if(number <= 9){
+    return "0" + number
+  }
+  return number
+}
+
+function url(qtdDays){
+  const date = new Date();
+  const listLastDays = qtdDays;
+  const end_date = 
+  `${date.getFullYear()}-${addZero(date.getMonth() + 1)}-${addZero(date.getDate())}`;
+  date.setDate(date.getDate() - listLastDays); //Setando para o dias anteriores do parâmetro
+  const start_date = 
+  `${date.getFullYear()}-${addZero(date.getMonth() + 1)}-${addZero(date.getDate())}`;
+  //URL  GET API
+  return `https://api.coindesk.com/v1/bpi/historical/close.json?start=${start_date}&end=${end_date}`;
+}
+
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
