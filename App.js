@@ -2,7 +2,9 @@ import React from 'react';
 import { StyleSheet, StatusBar, Text, View, SafeAreaView, Platform } from 'react-native'
 import CurrentPrice from './src/components/CurrentPrice'
 import HistoryGraphic from './src/components/HistoryGraphic'
-import QuotationList from './src/components/QuotationsList';
+import QuotationList from './src/components/QuotationsList'
+import QuotationItems from './src/components/QuotationsList/QuotationsItems'
+
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
@@ -13,6 +15,7 @@ export default function App() {
       <CurrentPrice/>
       <HistoryGraphic/>
       <QuotationList/>
+      <QuotationItems/>
     </SafeAreaView>
   );
 }
