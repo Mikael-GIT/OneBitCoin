@@ -80,7 +80,7 @@ export default function App() {
       barStyle="dark-content">
       </StatusBar>
       <CurrentPrice/>
-      <HistoryGraphic/>
+      <HistoryGraphic infoDataGraphic={coinsGraphicList}/>
       <QuotationList filterDay={updateDay} listTransactions={coinList}/>
     </SafeAreaView>
   );
